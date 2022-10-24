@@ -9,6 +9,17 @@ import UserView from "./components/UserView.vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 
+/**
+ * Pagina oficial de Vue-router
+ * https://v3.router.vuejs.org/
+ *
+ * Frameworks de UI
+ * https://getbootstrap.com/
+ * https://bootstrap-vue.org/
+ * https://www.primefaces.org/primevue/
+ * https://vuetifyjs.com/en/
+ */
+
 // paso 1
 const routes = [
   { path: "/", component: Home },
