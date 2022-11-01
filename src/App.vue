@@ -2,7 +2,7 @@
   <div id="app" class="container">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Nuevas Tecnologias 2</a>
+        <a class="navbar-brand" href="#">{{ store.name }}</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -22,6 +22,7 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/user">User</router-link>
             </li>
+            <li class="nav-item">{{ store.total }}</li>
           </ul>
         </div>
       </div>
@@ -30,3 +31,17 @@
     <router-view></router-view>
   </div>
 </template>
+<script>
+import { useNt2Store } from "./store";
+
+export default {
+  setup() {
+    //vamos a dejar disponible el state
+    const store = useNt2Store();
+    return { store };
+  },
+  async created() {
+    await this.store.init();
+  },
+};
+</script>

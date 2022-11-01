@@ -1,5 +1,6 @@
 <template>
   <div>
+    <button @click="store.incrementar()">incrementar</button>
     <div class="list-group">
       <a
         v-for="(usuario, index) in usuarios"
@@ -14,7 +15,13 @@
 </template>
 
 <script>
+import { useNt2Store } from "../store";
+
 export default {
+  setup() {
+    const store = useNt2Store();
+    return { store };
+  },
   data() {
     return {
       usuarios: [],

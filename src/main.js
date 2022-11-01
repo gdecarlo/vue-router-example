@@ -9,6 +9,9 @@ import UserView from "./components/UserView.vue";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.js";
 
+import { PiniaVuePlugin, createPinia } from "pinia";
+Vue.use(PiniaVuePlugin);
+const pinia = createPinia();
 /**
  * Pagina oficial de Vue-router
  * https://v3.router.vuejs.org/
@@ -47,5 +50,6 @@ Vue.use(VueRouter); //injecta algunos utiles.
 
 new Vue({
   router, //paso 4
+  pinia,
   render: (h) => h(App),
 }).$mount("#app");
